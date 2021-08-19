@@ -1,0 +1,27 @@
+  !==Program to run the Real State Of LE===
+  !==Andres Yarce, Santiago Lopez-Restrepo==
+
+program run_lotos_euros_real
+  use module_EnKF
+  use module_matrix
+  implicit none
+
+  integer::tsim,pertur
+  real*8::pertur
+
+
+  
+  open(61,file='./Parameters/Model_Parameters.in',status='old')
+  read(61,*)pertur
+  close(61,*)
+
+  open(61,file='./Parameters/DA_Parameters.in',status='old')
+  read(61,*)
+  read(61,*)
+  read(61,*)
+  read(61,*) tsim
+  close(61,*)
+  
+  
+
+end program run_lotos_euros_real

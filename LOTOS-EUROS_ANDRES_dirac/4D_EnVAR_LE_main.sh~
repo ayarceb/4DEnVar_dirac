@@ -1,0 +1,23 @@
+#! /bin/bash
+
+#============== Script 4DEnVar for the LOTOS-EUROS  =======================
+# Andres Yarce Botero-Santiago Lopez-Restrepo
+# Based in the Paper: "A review of operational methods of variational 
+# and ensemble-variational data assimilation" R.N. Bannister
+#
+#==========================================================================
+#  The true run was created with    Emis_Fact=0.5
+#                                   Depo_Vd=1
+#  stored in no2_column_True.mat  (in the code with recent the true is one ensamble member not perturbed)
+#==========================================================================
+#  First background created with    Emis_Fact= 1.5
+#                                   Depo_Vd=1
+#==========================================================================
+#  To choice:
+#
+#  Parameter perturbation             pertu=1   (with Vd=1 only emissions perturbed)
+#  Initial condition  perturbation    pertu=0
+# =========================================================================
+
+#===Remove all previous run====
+rm -rf /disk/kalman/scratch/projects/4DEnVar

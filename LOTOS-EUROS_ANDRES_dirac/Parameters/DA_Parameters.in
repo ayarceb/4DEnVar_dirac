@@ -1,0 +1,12 @@
+121    !Number of states
+22    !Number of observations
+20    !Number of ensembles
+96    !Simulation time
+6    !Assimilation Window
+24   !Assimilation window start
+10     !Number of inner step
+0.02  !Tolerance Inner Loop
+5    !Sparse initial Ensemble
+0.01  !Sigma Observations
+0                ! pertur Modify (0-initial conditions) or (1-parameters)
+0.8               ! inflation factor

@@ -1,0 +1,9 @@
+
+cd /run/media/dirac/Datos/scratch/projects/4DEnVAR_inner/Xk/output
+echo 'Merging LE Ensembles Outputs'
+
+ncks -O -h --mk_rec_dmn time LE_Xk_column_20190203_xb.nc  Y_Merge_xk.nc
+mv LE_Xk_column_20190203_xb.nc ..
+ncrcat -O -h Y_Merge_xk.nc LE_Xk_column_2*_xb.nc Y_xk.nc
+
+ cd /run/media/dirac/Datos/Reciente_Dropbox/users/arjo/lotos-euros/Repositorio_Personal_Slopez/Personal/FORTRAN/LOTOS-EUROS_ANDRES

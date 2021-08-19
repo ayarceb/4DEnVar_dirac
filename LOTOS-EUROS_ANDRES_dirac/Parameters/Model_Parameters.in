@@ -1,0 +1,8 @@
+10                !  Perturbation for the real state
+11               ! gridx Lateral dimension from the output LE grid
+11              ! grid y                              
+5                ! grid z(CONSIDERAR EJE Z?) si por trabajar con los estados no salidas
+0                ! pertur Modify (0-initial conditions) or (1-parameters)
+0.8               ! inflInflation factor
+96                ! tsim Time simulation steps for 4 days
+
