@@ -20,13 +20,21 @@
 # =========================================================================
 
 
+# remove folders old runs in scratch folder
+
+rm -rf /run/media/dirac/Datos/scratch/projects/4DEnVAR_inner
+mv /run/media/dirac/Datos/scratch/projects/4DEnVAR/40_ensembles_15_enero/LE_40_ensembles*.nc /run/media/dirac/Datos/scratch/projects/4DEnVAR/40_ensembles_15_enero/output
+rm -rf /run/media/dirac/Datos/scratch/projects/4DEnVAR/40_ensembles_15_enero/output/Ens_x*.nc
+rm -rf /run/media/dirac/Datos/scratch/projects/4DEnVAR/40_ensembles_15_enero/output/Merge_x*.nc
+rm /home/dirac/4DEnVar_dirac/LOTOS-EUROS_ANDRES_dirac/data/*
+
 #==================================================================================
 # 					Modified by user
 #==================================================================================
 
 
 #===Path where the program is running===
-mydir='/run/media/dirac/Datos/Reciente_Dropbox/users/arjo/lotos-euros/Repositorio_Personal_Slopez/Personal/FORTRAN/LOTOS-EUROS_ANDRES_dirac'
+mydir='/home/dirac/4DEnVar_dirac/LOTOS-EUROS_ANDRES_dirac'
 
 #===Path LOTOS-EUROS MODEL (OJO carpeta de LEKF)===
 LE='/run/media/dirac/Datos/Reciente_Dropbox/users/arjo/lotos-euros/Version_WRF_04_2020/lekf_4DEnVAR/lekf/v3.0.003-beta'

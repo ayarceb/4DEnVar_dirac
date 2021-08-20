@@ -218,11 +218,20 @@ subroutine create_DC_NC(Xk,n,n_cells_int,agrup,lat,lon,time,nx_int,ny_int,initia
   status =nf90_put_var(ncid, lon_varid, longitude)
   status =nf90_put_var(ncid, time_varid, time_var)
   DC=1
+  CALL RANDOM_NUMBER(DCrnd)
 		do i=1,n_cells_int
-			!DC(nx_int(i),ny_int(i))=max(Xk(agrup(i)),0.0)
-			CALL RANDOM_NUMBER(DCrnd)
+			if(i>1)then
+				if(agrup(i).ne.agrup(i-1)) then
+					CALL RANDOM_NUMBER(DCrnd)
+				end if			
+			end if
+			
 			write(*,*)'Dcnrd = ', DCrnd
 			DC(nx_int(i),ny_int(i))=max(Xk(agrup(i)),0.5*DCrnd)
+		        
+		
+
+
 		enddo
   do i=1,time
 		DC_nc(:,:,1,1,i)=DC	
