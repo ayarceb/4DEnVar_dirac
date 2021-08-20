@@ -5,10 +5,10 @@
 Instruction for operation the code 4DENVAR LOTOS-EUROS
 
 
-The code assimilates synthetic column as observations (first step to assimilate TROPOMI NO2 Column) in order to modify the dc correction factors. The dc correction factors are the parameter values tthat multiply the current emission inventories
+The code assimilates synthetic column as observations (first step to assimilate TROPOMI NO2 Column) to modify the dc correction factors. The dc correction factors are the parameter values that multiply the current emission inventories
 
 
-The GITHUB path of the working code is https://github.com/slopezr2/Personal/tree/master/FORTRAN/LOTOS-EUROS_ANDRES_dirac
+The GITHUB path of the working code is https://github.com/ayarceb/4DEnVar_dirac
 
 
 *REMEMBER TO DELETE timerange.rc if you are running a new experiment
@@ -38,8 +38,8 @@ Modificar el parámetro para controlar el tamaño de paso
 ----------------------------------------------------------------------------------------------------
 
 
-Para modificar el dc noise se deben modificar con atención dos archivos.
+Para modificar el dc noise se deben modificar con atención dos archivos en dirac
 
-Uno es el READ_LE_ENSEMBLE_OUTPUTS_V2.F95   (/run/media/dirac/Datos/Reciente_Dropbox/users/arjo/lotos-euros/Repositorio_Personal_Slopez/Personal/FORTRAN/LOTOS-EUROS_ANDRES_dirac)
+Uno es el READ_LE_ENSEMBLE_OUTPUTS_V2.F95   (/home/dirac/4DEnVar_dirac/LOTOS-EUROS_ANDRES_dirac)
 
 y otro el lekf_noise_solo_ciudades.90      (/run/media/dirac/Datos/Reciente_Dropbox/users/arjo/lotos-euros/Version_WRF_04_2020/lekf_4DEnVAR/lekf/v3.0.003-beta/base/002/src)
