@@ -77,7 +77,7 @@ days_simulation=5   # Recordar modificar
 #===== Data assimilation parameters=====
 dawindows=4    #Assimilation Window
 st_ass=1   #Assimilation window start
-inner=15     #Number of inner step
+inner=15    #Number of inner step
 eps=0.0002  #Tolerance Inner Loop
 sigma_obs=0.01  #Sigma Observations
 

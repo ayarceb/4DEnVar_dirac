@@ -220,18 +220,15 @@ subroutine create_DC_NC(Xk,n,n_cells_int,agrup,lat,lon,time,nx_int,ny_int,initia
   DC=1
   CALL RANDOM_NUMBER(DCrnd)
 		do i=1,n_cells_int
-			if(i>1)then
-				if(agrup(i).ne.agrup(i-1)) then
-					CALL RANDOM_NUMBER(DCrnd)
-				end if			
-			end if
+			!if(i>1)then
+			!	if(agrup(i).ne.agrup(i-1)) then
+			!		CALL RANDOM_NUMBER(DCrnd)
+			!	end if			
+			!end if
 			
 			write(*,*)'Dcnrd = ', DCrnd
-			DC(nx_int(i),ny_int(i))=max(Xk(agrup(i)),0.5*DCrnd)
+			DC(nx_int(i),ny_int(i))=max(Xk(agrup(i)),0.3)
 		        
-		
-
-
 		enddo
   do i=1,time
 		DC_nc(:,:,1,1,i)=DC	
