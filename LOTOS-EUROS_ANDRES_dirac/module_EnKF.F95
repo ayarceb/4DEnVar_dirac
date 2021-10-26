@@ -256,6 +256,34 @@ subroutine ensmean(Xen,Xmean)
 end subroutine ensmean
 
 
+subroutine Cost_Function(xbmean,xk,inno,dXen,inR,J)
+    !===Calculate the cost function====
+    use module_matrix
+    implicit none
+    real*8,dimension(:,:), intent(in)  :: dXen,inR
+    real*8,dimension(:), intent(in)    :: xbmean,xk,inno
+    real*8,dimension(1,1), intent(out) :: J   
+    real*8,allocatable,dimension(:,:)  :: InvrseB,inno_aux,xk_aux
+    integer 	:: n,m				
+	
+    n=size(dXen,1)
+    m=size(inno,1)
+    allocate(InvrseB(n,n))
+    allocate(inno_aux(m,1))
+    allocate(xk_aux(n,1))
+    
+    inno_aux(:,1)=inno 
+    xk_aux(:,1)=xk-xbmean
+	
+    InvrseB=inv(prod(dXen,transpose(dXen)))
+    J=matmul(matmul(transpose(xk_aux),InvrseB),(xk_aux))+matmul(matmul(transpose(inno_aux),inR),(inno_aux))
+    write(*,*) 'Const Function', shape(J)
+
+end subroutine Cost_Function
+
+
+
+
 subroutine anomalies(Xen,Xmean,dXen)
 
    !===Calculate de Anomalies Matrix====

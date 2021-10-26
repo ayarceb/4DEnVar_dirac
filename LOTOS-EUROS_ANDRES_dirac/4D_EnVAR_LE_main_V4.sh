@@ -75,7 +75,7 @@ days_simulation=5   # Recordar modificar
 
 
 #===== Data assimilation parameters=====
-dawindows=4    #Assimilation Window
+dawindows=1    #Assimilation Window
 st_ass=1   #Assimilation window start
 inner=15    #Number of inner step
 eps=0.0002  #Tolerance Inner Loop
@@ -92,7 +92,7 @@ echo 'timerange.start     :  2019-01-19 00:00:00'>>${LE}/proj/eafit/000/rc/timer
 echo 'timerange.end       :  2019-01-20 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
 
 echo 'timerange.start     :  2019-01-16 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
-echo 'timerange.end       :  2019-01-20 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
+echo 'timerange.end       :  2019-01-17 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
 
 
 

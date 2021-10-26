@@ -38,7 +38,7 @@ Modificar el parámetro para controlar el tamaño de paso
 
 Para modificar el dc noise se deben modificar con atención dos archivos.
 
-Uno es el READ_LE_ENSEMBLE_OUTPUTS_V2.F95   (/run/media/dirac/Datos/Reciente_Dropbox/users/arjo/lotos-euros/Repositorio_Personal_Slopez/Personal/FORTRAN/LOTOS-EUROS_ANDRES_dirac)
+Uno es el READ_LE_ENSEMBLE_OUTPUTS_V2.F95   (/home/dirac/4DEnVar_dirac/LOTOS-EUROS_ANDRES_dirac)
 
 y otro el lekf_noise_solo_ciudades.90      (/run/media/dirac/Datos/Reciente_Dropbox/users/arjo/lotos-euros/Version_WRF_04_2020/lekf_4DEnVAR/lekf/v3.0.003-beta/base/002/src)
 

@@ -11,7 +11,8 @@ program LE_4DEnVAR_Method
   real*8,parameter::F=8
   real*8::sigmaobs,rho
   integer::k,i,j,l,fileid     ! i for states, j for time, k for ensembles,l for inner steps
-  real*8::realaux  
+  real*8::realaux
+  real*8, dimension(1,1)::J_cost  
   integer::intaux,flaq,initial_day
   real*8,parameter :: dt=0.01
   real*8::tolerance,sparse
@@ -22,7 +23,7 @@ program LE_4DEnVAR_Method
   real*8,allocatable,dimension(:,:,:)::dY
   real*8,allocatable,dimension(:)::aux_vect,xbmean,xamean,ymean,aux_read,aux_read_y
   integer,allocatable,dimension(:) :: nx_int(:),ny_int(:),agrup(:)
-  character (len=500)::FILE_NAME,Path,FILE_NAME2
+  character (len=500)::FILE_NAME,Path,FILE_NAME2, FILE_NAME3
   
 
 !====Reading parameter rho ====
@@ -248,6 +249,9 @@ loop_inner:do while (l .LE. inner) !.AND. (norma(l-1) .GE. tolerance))
 	!CALL execute_command_line('./aux_merge_Y_xk')
 	write(*,*) '=== Reading Yxk iteration', l 
 	Call read_NC_Yk_Tropomi(Y_xk,dawindows,initial_day,st_ass,lon,lat)
+
+
+
 	write(*,*) '=== Yxk Readed iteration', l 
      loop_time_analysis_inner: do j=(st_ass+2),st_ass+1+dawindows
           write(*,*) 'j-(st_ass+1)=', j-(st_ass+1)
@@ -257,6 +261,18 @@ loop_inner:do while (l .LE. inner) !.AND. (norma(l-1) .GE. tolerance))
     end do loop_time_analysis_inner
     write(*,*) "Max val inno inner", l, " = ", maxval(inno)
   
+!Calculate Cost Function
+
+    write(*,*) '=== Calculating cost function=== ', l 
+    CALL Cost_Function(xbmean,xk(:,st_ass+1,l) ,inno(:,j-(st_ass+1)),dXen,inR,J_cost)
+    FILE_NAME3='./data/Cost_func'//trim(FILE_NAME2)//'.dat'
+    open(61,file=FILE_NAME3)
+    write(61,*) J_cost
+    close(61)
+
+
+
+
   FILE_NAME='./data/innovation_'//trim(FILE_NAME2)//'.dat'
 	open(61,file=FILE_NAME)
 	write(61,*) inno(:,l) 
