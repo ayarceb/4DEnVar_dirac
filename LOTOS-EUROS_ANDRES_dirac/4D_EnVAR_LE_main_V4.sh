@@ -46,7 +46,7 @@ NETCDF_HOME='/lib64/gfortran/modules'
 #NETCDF_HOME=${OPT}'/home/dirac/miniconda3/pkgs/libnetcdf-4.7.3-nompi_h9f9fd6a_101'
 
 #===Run ID====
-runid='40_ensembles_15_enero'
+runid='Come_Back'
 
 #===Date of simulations====
 if [ -f ${LE}/proj/eafit/000/rc/timerange.rc ]
@@ -68,7 +68,7 @@ then
 fi
 
 
-start_date=20190115 # Recordar modificar
+start_date=20190201 # Recordar modificar
 #=====Days to be simulated======
 
 days_simulation=5   # Recordar modificar
@@ -88,11 +88,11 @@ echo ${eps}>>${mydir}/DATA_4DEnVAR/parameters.in
 echo ${sigma_obs}>>${mydir}/DATA_4DEnVAR/parameters.in
 
 
-echo 'timerange.start     :  2019-01-19 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
-echo 'timerange.end       :  2019-01-20 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
+echo 'timerange.start     :  2019-02-01 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
+echo 'timerange.end       :  2019-02-04 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
 
-echo 'timerange.start     :  2019-01-16 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
-echo 'timerange.end       :  2019-01-17 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
+echo 'timerange.start     :  2019-02-02 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
+echo 'timerange.end       :  2019-02-04 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
 
 
 
@@ -101,7 +101,7 @@ echo ${days_simulation}>>${mydir}/DATA_4DEnVAR/startdate.in
 
 echo ${runid}>${mydir}/DATA_4DEnVAR/runid.in
 #===Number of Ensembles===
-Nens=40
+Nens=3
 
 
 #===Parameter rho  esquema de optimizacion====
@@ -149,8 +149,8 @@ echo 'Running Model Real and Ensemble'
 
 #====Run LOTOS-EUROS MODEL====
 
-#cd ${LE}
-#./launcher
+cd ${LE}
+./launcher
 
 #====Read LE Ensemble outputs====
 

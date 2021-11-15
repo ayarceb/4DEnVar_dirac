@@ -38,7 +38,7 @@ NETCDF_HOME='/lib64/gfortran/modules'
 #NETCDF_HOME=${OPT}'/home/dirac/miniconda3/pkgs/libnetcdf-4.7.3-nompi_h9f9fd6a_101'
 
 #===Run ID====
-runid='40_ensembles'
+runid='WRF_test'
 
 #===Date of simulations====
 if [ -f ${LE}/proj/eafit/000/rc/timerange.rc ]
@@ -81,8 +81,8 @@ echo ${eps}>>${mydir}/DATA_4DEnVAR/parameters.in
 echo ${sigma_obs}>>${mydir}/DATA_4DEnVAR/parameters.in
 
 
-echo 'timerange.start     :  2019-02-01 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
-echo 'timerange.end       :  2019-02-04 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
+echo 'timerange.start     :  2019-01-08 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
+echo 'timerange.end       :  2019-01-10 00:00:00'>>${LE}/proj/eafit/000/rc/timerange.rc
 
 echo 'timerange.start     :  2019-02-03 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
 echo 'timerange.end       :  2019-02-04 00:00:00'>>${LE}/proj/eafit/000/rc/timerange_inner.rc
@@ -94,7 +94,7 @@ echo ${days_simulation}>>${mydir}/DATA_4DEnVAR/startdate.in
 
 echo ${runid}>${mydir}/DATA_4DEnVAR/runid.in
 #===Number of Ensembles===
-Nens=40
+Nens=3
 
 
 #===Parameter rho====
@@ -142,9 +142,8 @@ echo 'Running Model Real and Ensemble'
 
 #====Run LOTOS-EUROS MODEL====
 
-#cd ${LE}
-#./launcher
-
+cd ${LE}
+./launcher_wrf
 #====Read LE Ensemble outputs====
 
 #==Merging LE DC for each ensemble member ==
